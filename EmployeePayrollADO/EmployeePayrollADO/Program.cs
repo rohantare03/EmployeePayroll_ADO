@@ -13,6 +13,7 @@
                 Console.WriteLine("2: Close Connection");
                 Console.WriteLine("3: Add Employee Data");
                 Console.WriteLine("4: Update Employee Data");
+                Console.WriteLine("5: Retrieve data in date range");
                 Console.WriteLine("0: Exit");
                 option = int.Parse(Console.ReadLine());
                 switch (option)
@@ -73,6 +74,11 @@
                         double basicpay1 = Convert.ToInt64(Console.ReadLine());
                         empPayroll.BasicPay = basicpay1;
                         employeeDetail.UpdateSalary(empPayroll);
+                        break;
+                    case 5:
+                        var fromdate = Convert.ToDateTime("2022-01-01");
+                        var todate = Convert.ToDateTime("2022-10-10");
+                        employeeDetail.EmployeeData_InDataRange(fromdate, todate);
                         break;
                     default:
                         Console.WriteLine("Enter a valid Input");
