@@ -17,6 +17,9 @@
                 option = int.Parse(Console.ReadLine());
                 switch (option)
                 {
+                    case 0:
+                        Console.WriteLine("Exit");
+                        break;
                     case 1:
                         employeeDetail.EstablishConnection();
                         break;
