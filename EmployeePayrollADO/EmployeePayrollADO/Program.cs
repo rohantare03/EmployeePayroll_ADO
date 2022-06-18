@@ -14,6 +14,7 @@
                 Console.WriteLine("3: Add Employee Data");
                 Console.WriteLine("4: Update Employee Data");
                 Console.WriteLine("5: Retrieve data in date range");
+                Console.WriteLine("6: Remove Details");
                 Console.WriteLine("0: Exit");
                 option = int.Parse(Console.ReadLine());
                 switch (option)
@@ -76,9 +77,15 @@
                         employeeDetail.UpdateSalary(empPayroll);
                         break;
                     case 5:
-                        var fromdate = Convert.ToDateTime("2022-01-01");
+                        var fromdate = Convert.ToDateTime("2022-01-01"); 
                         var todate = Convert.ToDateTime("2022-10-10");
                         employeeDetail.EmployeeData_InDataRange(fromdate, todate);
+                        break;
+                    case 6:
+                        Console.WriteLine("Enter the ID");
+                        int Ids = Convert.ToInt32(Console.ReadLine());
+                        empPayroll.ID = Ids;
+                        employeeDetail.RemoveDetails(empPayroll);
                         break;
                     default:
                         Console.WriteLine("Enter a valid Input");
